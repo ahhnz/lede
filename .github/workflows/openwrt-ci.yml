@@ -10,7 +10,7 @@ name: OpenWrt-CI
 on:
   #schedule:
   #  - cron: 32 23 * * *
-  release:
+   release:
     types: [published]
 
 jobs:
@@ -166,7 +166,6 @@ jobs:
           # ========================固件定制部分结束========================
           # 
           sed -i 's/^[ \t]*//g' ./.config
-
           make defconfig
 
       - name: Make download
