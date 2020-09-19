@@ -50,7 +50,7 @@ jobs:
           ./scripts/feeds update -a
           ./scripts/feeds install -a
 
-      - name: Generate configure file
+      - name: Costom configure file
         run: |
           rm -f ./.config*
           touch ./.config
@@ -168,9 +168,6 @@ jobs:
           # 
           sed -i 's/^[ \t]*//g' ./.config
           make defconfig
-
-        run: make defconfig
-
       - name: Make download
         run: |
           make download -j8
